@@ -1,0 +1,13 @@
+import { Component, Input } from '@angular/core';
+import { UsersListResponse } from '../../types/users-list-response';
+
+@Component({
+  selector: 'app-users-list',
+  standalone: false,
+  templateUrl: './users-list.component.html',
+  styleUrl: './users-list.component.scss'
+})
+export class UsersListComponent {
+
+  @Input({ required: true }) usersListUserC: UsersListResponse = [];
+}
