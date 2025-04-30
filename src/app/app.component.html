@@ -4,8 +4,18 @@
             <div class="p-4">
                 <app-users-list [usersListUserC]="usersListAppC"></app-users-list>
             </div>
-            <div class="p-4 bg-green-400">
-                TABS
+            <div class="p-4">
+                <mat-tab-group [(selectedIndex)]="currentTabIndex">
+                    <mat-tab label="GERAL">
+                        <app-general-informations *ngIf="usersListAppC.length > 0" [userCGeneral]="usersListAppC[0]"></app-general-informations>
+                    </mat-tab>
+                    <mat-tab label="CONTATO">
+
+                    </mat-tab>
+                    <mat-tab label="DEPENDENTES">
+
+                    </mat-tab>
+                </mat-tab-group>
             </div>
         </mat-card-content>
     </mat-card>

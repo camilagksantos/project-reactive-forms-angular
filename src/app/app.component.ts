@@ -13,7 +13,8 @@ import { UsersListResponse } from './types/users-list-response';
 })
 export class AppComponent implements OnInit {
 
-  usersListAppC:UsersListResponse= [];
+  usersListAppC: UsersListResponse = [];
+  currentTabIndex: number = 0;
   
   constructor(
     private readonly _countriesService: CountriesService,
