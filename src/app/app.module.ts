@@ -8,6 +8,7 @@ import { ComponentsModule } from './components/components.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { PipesModule } from './pipes/pipes.module';
 
 registerLocaleData(localePt, 'pt-PT');
 
@@ -19,7 +20,8 @@ registerLocaleData(localePt, 'pt-PT');
     BrowserModule,
     AppRoutingModule,
     AngularMaterialModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

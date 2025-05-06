@@ -8,6 +8,7 @@ import { UserInfoItemComponent } from './user-info-item/user-info-item.component
 import { ContactInformationComponent } from './contact-information/contact-information.component';
 import { PhoneListComponent } from './contact-information/components/phone-list/phone-list.component';
 import { AddressListComponent } from './contact-information/components/address-list/address-list.component';
+import { DependentsListComponent } from './dependents-list/dependents-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AddressListComponent } from './contact-information/components/address-l
     ContactInformationComponent,
     PhoneListComponent,
     AddressListComponent,
+    DependentsListComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { AddressListComponent } from './contact-information/components/address-l
   exports: [
     UsersListComponent,
     GeneralInformationsComponent,
-    ContactInformationComponent
+    ContactInformationComponent,
+    DependentsListComponent
    ]
 })
 export class ComponentsModule { }

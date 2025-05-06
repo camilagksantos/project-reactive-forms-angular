@@ -13,7 +13,7 @@
                         <app-contact-information *ngIf="usersListAppC.length > 0" [userContactInformationC]="usersListAppC[0]"></app-contact-information>
                     </mat-tab>
                     <mat-tab label="DEPENDENTES">
-
+                        <app-dependents-list *ngIf="usersListAppC.length > 0" [userDependentsListC]="usersListAppC[0].dependentsList"></app-dependents-list>
                     </mat-tab>
                 </mat-tab-group>
             </div>
