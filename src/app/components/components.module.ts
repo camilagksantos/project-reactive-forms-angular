@@ -5,13 +5,19 @@ import { PipesModule } from '../pipes/pipes.module';
 import { UsersListComponent } from './users-list/users-list.component';
 import { GeneralInformationsComponent } from './general-informations/general-informations.component';
 import { UserInfoItemComponent } from './user-info-item/user-info-item.component';
+import { ContactInformationComponent } from './contact-information/contact-information.component';
+import { PhoneListComponent } from './contact-information/components/phone-list/phone-list.component';
+import { AddressListComponent } from './contact-information/components/address-list/address-list.component';
 
 @NgModule({
   declarations: [
   
     UsersListComponent,
     GeneralInformationsComponent,
-    UserInfoItemComponent
+    UserInfoItemComponent,
+    ContactInformationComponent,
+    PhoneListComponent,
+    AddressListComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +26,8 @@ import { UserInfoItemComponent } from './user-info-item/user-info-item.component
   ],
   exports: [
     UsersListComponent,
-    GeneralInformationsComponent
+    GeneralInformationsComponent,
+    ContactInformationComponent
    ]
 })
 export class ComponentsModule { }

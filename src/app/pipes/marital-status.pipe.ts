@@ -8,11 +8,11 @@ import { MaritalStatus } from '../enums/marital-status.enum';
 export class MaritalStatusPipe implements PipeTransform {
 
   transform(maritalStatus: number): string {
-    const maritalStatusMap: { [key: number]: string } = {
+    const maritalStatusMap: { [key in MaritalStatus]: string } = {
       [MaritalStatus.SINGLES]: 'Solteiro',
       [MaritalStatus.MARRIED]: 'Casado',
       [MaritalStatus.DIVORCED]: 'Divorciado',
     }
-    return maritalStatusMap[maritalStatus] ?? 'Desconhecido';
+    return maritalStatusMap[maritalStatus as MaritalStatus] ?? 'Desconhecido';
   }
 }
