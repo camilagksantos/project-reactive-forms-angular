@@ -9,6 +9,8 @@ import { ContactInformationComponent } from './contact-information/contact-infor
 import { PhoneListComponent } from './contact-information/components/phone-list/phone-list.component';
 import { AddressListComponent } from './contact-information/components/address-list/address-list.component';
 import { DependentsListComponent } from './dependents-list/dependents-list.component';
+import { ButtonsContainerComponent } from './buttons-container/buttons-container.component';
+import { UserInformationsContainerComponent } from './user-informations-container/user-informations-container.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { DependentsListComponent } from './dependents-list/dependents-list.compo
     PhoneListComponent,
     AddressListComponent,
     DependentsListComponent,
+    ButtonsContainerComponent,
+    UserInformationsContainerComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +34,9 @@ import { DependentsListComponent } from './dependents-list/dependents-list.compo
     UsersListComponent,
     GeneralInformationsComponent,
     ContactInformationComponent,
-    DependentsListComponent
+    DependentsListComponent,
+    ButtonsContainerComponent,
+    UserInformationsContainerComponent
    ]
 })
 export class ComponentsModule { }

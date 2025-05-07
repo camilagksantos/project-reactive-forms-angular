@@ -143,7 +143,7 @@ export class UsersService {
   ];
 
   getUsers() {
-    return new Observable < UsersListResponse>((observer) => {
+    return new Observable<UsersListResponse>((observer) => {
       setTimeout(() => {
         observer.next(this.usersList);
       }, 1000);

@@ -1,29 +1,17 @@
 <div class="p-4 max-w-screen-xl mx-auto">
     <mat-card>
         <mat-card-content>
-            <div class="p-4">
-                <app-users-list [usersListUserC]="usersListAppC"
-                    (onUserSelectedEmitt)="onUserSelectedAppC($event)"></app-users-list>
-            </div>
-            <div class="p-4">
-                <mat-tab-group [(selectedIndex)]="currentTabIndex">
-                    <mat-tab label="GERAL">
-                        <app-general-informations 
-                            *ngIf="usersListAppC.length > 0"
-                            [userCGeneral]="userSelected"></app-general-informations>
-                    </mat-tab>
-                    <mat-tab label="CONTATO">
-                        <app-contact-information 
-                            *ngIf="usersListAppC.length > 0"
-                            [userContactInformationC]="userSelected"></app-contact-information>
-                    </mat-tab>
-                    <mat-tab label="DEPENDENTES">
-                        <app-dependents-list 
-                            *ngIf="usersListAppC.length > 0 && userSelected?.dependentsList"
-                            [userDependentsListC]="userSelected.dependentsList">
-                        </app-dependents-list> </mat-tab>
-                </mat-tab-group>
-            </div>
+
+            <app-users-list [usersListUserC]="usersListAppC"
+                (onUserSelectedEmitt)="onUserSelectedAppC($event)"></app-users-list>
+
+            <app-buttons-container *ngIf="userSelectedIndex !== undefined" [isInEditMode]="isInEditMode"
+                (onEditButtonEmitt)="onEditButton()" (onCancelButtonEmitt)="onCancelButton()"></app-buttons-container>
+
+            <app-user-informations-container *ngIf="userSelectedIndex !== undefined"
+                [userSelectedInformationContainerC]="usersListAppC[userSelectedIndex]"
+                [isInEditModeInformationContainerC]="isInEditMode"></app-user-informations-container>
+
         </mat-card-content>
     </mat-card>
 </div>

@@ -15,9 +15,9 @@ import { IUser } from './interfaces/user/i-user';
 export class AppComponent implements OnInit {
 
   usersListAppC: UsersListResponse = [];
-  currentTabIndex: number = 2;
   userSelectedIndex: number | undefined;
   userSelected: IUser = {} as IUser;
+  isInEditMode: boolean = false;
   
   constructor(
     private readonly _countriesService: CountriesService,
@@ -65,6 +65,12 @@ export class AppComponent implements OnInit {
         dependentsList: userFound.dependentsList || []
       };
     }
-    this.currentTabIndex = 0;
+  }
+
+  onCancelButton() {
+    this.isInEditMode = false;
+  }
+  onEditButton() {
+    this.isInEditMode = true;
   }
 }
