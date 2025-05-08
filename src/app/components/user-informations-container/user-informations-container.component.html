@@ -7,6 +7,7 @@
     <mat-tab label="CONTATO">
         <app-contact-information *ngIf="userSelectedInformationContainerC"
             [userContactInformationC]="userSelectedInformationContainerC"></app-contact-information>
+        <app-contact-informations-edit></app-contact-informations-edit>
     </mat-tab>
     <mat-tab label="DEPENDENTES">
         <app-dependents-list *ngIf="userSelectedInformationContainerC && userSelectedInformationContainerC?.dependentsList"

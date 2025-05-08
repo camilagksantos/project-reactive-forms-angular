@@ -14,6 +14,6 @@ export class UserInformationsContainerComponent implements OnChanges{
   @Input({ required: true }) isInEditModeInformationContainerC: boolean = false;
 
   ngOnChanges(_: SimpleChanges){
-    this.currentTabIndex = 0;
+    this.currentTabIndex = 1;
   }
 }
