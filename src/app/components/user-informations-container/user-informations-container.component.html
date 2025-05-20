@@ -2,7 +2,7 @@
     <mat-tab label="GERAL">
         <app-general-informations *ngIf="userSelectedInformationContainerC"
             [userCGeneral]="userSelectedInformationContainerC"></app-general-informations>
-        <app-general-informations-edit></app-general-informations-edit>
+        <app-general-informations-edit [userFormEdit]="userFormController"></app-general-informations-edit>
     </mat-tab>
     <mat-tab label="CONTATO">
         <app-contact-information *ngIf="userSelectedInformationContainerC"
@@ -10,7 +10,10 @@
         <app-contact-informations-edit></app-contact-informations-edit>
     </mat-tab>
     <mat-tab label="DEPENDENTES">
-        <app-dependents-list *ngIf="userSelectedInformationContainerC && userSelectedInformationContainerC?.dependentsList"
+        <app-dependents-list
+            *ngIf="userSelectedInformationContainerC && userSelectedInformationContainerC?.dependentsList"
             [userDependentsListC]="userSelectedInformationContainerC.dependentsList">
-        </app-dependents-list> </mat-tab>
+        </app-dependents-list>
+        <app-dependents-list-edit></app-dependents-list-edit>
+    </mat-tab>
 </mat-tab-group>
