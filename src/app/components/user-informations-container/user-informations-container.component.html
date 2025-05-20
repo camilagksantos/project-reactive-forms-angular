@@ -1,8 +1,13 @@
 <mat-tab-group [(selectedIndex)]="currentTabIndex">
     <mat-tab label="GERAL">
-        <app-general-informations *ngIf="userSelectedInformationContainerC"
+        <app-general-informations 
+            *ngIf="userSelectedInformationContainerC"
             [userCGeneral]="userSelectedInformationContainerC"></app-general-informations>
-        <app-general-informations-edit [userFormEdit]="userFormController"></app-general-informations-edit>
+        <app-general-informations-edit 
+            [userFormEdit]="userFormController"
+            [countriesListEdit]="countriesList"
+            [statesListEdit]="StatesListContainerC"
+            (onCountrySelectedEmitt)="onCountrySelected($event)"></app-general-informations-edit>
     </mat-tab>
     <mat-tab label="CONTATO">
         <app-contact-information *ngIf="userSelectedInformationContainerC"
