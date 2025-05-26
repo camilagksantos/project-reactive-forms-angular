@@ -3,6 +3,7 @@ import { Form, FormControl, FormGroup } from '@angular/forms';
 import { CountriesList } from '../../types/countries.list';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { StatesList } from '../../types/states-list';
+import { maritalStatusArray } from '../../utils/marital-status-description-map';
 
 @Component({
   selector: 'app-general-informations-edit',
@@ -34,6 +35,10 @@ export class GeneralInformationsEditComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     this.countriesListFiltered = this.countriesListEdit;
     this.statesListFiltered = this.statesListEdit;
+  }
+
+  get maritalStatusArray() {
+    return maritalStatusArray;
   }
 
   get emailControl(): FormControl {

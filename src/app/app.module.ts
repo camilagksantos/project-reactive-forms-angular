@@ -10,7 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { PipesModule } from './pipes/pipes.module';
 
-registerLocaleData(localePt, 'pt-PT');
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ registerLocaleData(localePt, 'pt-PT');
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
-    { provide: LOCALE_ID, useValue: 'pt-PT' }
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
   bootstrap: [
     AppComponent
