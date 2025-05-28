@@ -55,4 +55,8 @@ export class UserInformationsContainerComponent extends UserFormController imple
       this.StatesListContainerC = statesList;
     });
   }
+
+  mostrarUserForm() {
+    console.log('mostrarUserForm', this.userFormController);
+  }
 }
