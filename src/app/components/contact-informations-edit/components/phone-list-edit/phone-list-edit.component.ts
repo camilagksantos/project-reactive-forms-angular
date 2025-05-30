@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-phone-list-edit',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './phone-list-edit.component.html',
   styleUrl: './phone-list-edit.component.scss'
 })
-export class PhoneListEditComponent{
-
+export class PhoneListEditComponent {
+  @Input({ required: true }) userFormPhoneListEditComponent!: FormGroup;
+  
+  get phoneListAlias(): FormArray {
+    return this.userFormPhoneListEditComponent.get('contactInformations.phoneList') as FormArray;
+  }
 }
