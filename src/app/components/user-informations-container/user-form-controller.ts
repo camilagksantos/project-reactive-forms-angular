@@ -5,6 +5,8 @@ import { PhoneList } from "../../types/phone-list";
 import { AddressList } from "../../types/address-list";
 import { DependentsList } from "../../types/dependents-list";
 import { convertPtBrDateToDateObj } from "../../utils/convert-pt-br-date-to-date-obj";
+import { PhoneType } from "../../enums/phone-type.enum";
+import { preparePhoneList } from "../../utils/prepare-phone-list";
 
 export class UserFormController {
     userFormController!: FormGroup;
@@ -52,16 +54,16 @@ export class UserFormController {
     }
     
     fulfillPhoneList(phoneList: PhoneList) {
-        const phoneFormArray = this.phoneList;
-        phoneFormArray.clear();
-        phoneList.forEach(phone => {
-            phoneFormArray.push(this._formBuilder.group({
-                type: [phone.type, Validators.required],
-                areaCode: [phone.areaCode, Validators.required],
-                number: [phone.number, Validators.required],
-                internationalCode: [phone.internationalCode, Validators.required],
+        preparePhoneList(phoneList, false, (phone) => {
+            const phoneValidators = phone.type === PhoneType.EMERGENCY ? [] : [Validators.required];
+            this.phoneList.push(this._formBuilder.group({
+                type: [phone.type],
+                typeDescription: [phone.typeDescription],
+                number: [phone.phoneNumber, phoneValidators]
             }));
         });
+
+        console.log('form phoneList', this.phoneList);
     }
     
     fulfillAddressList(addressList: AddressList) {
