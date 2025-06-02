@@ -3,8 +3,8 @@
         <ng-container formArrayName="phoneList">
             <mat-form-field class="w-full" *ngFor="let phone of phoneListAlias.controls; let i = index" [formGroupName]="i">
                 <mat-label>Residencial: </mat-label>
-                <input matInput placeholder="+55 11 1234-1234"  formControlName="number">
-            </mat-form-field>
+                <input matInput placeholder="+55 11 1234-1234" formControlName="number" [appPhoneMask]="phone.get('type')?.value">
+            </mat-form-field> 
         </ng-container>
     </ng-container>
 </form>

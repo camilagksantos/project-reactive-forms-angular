@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { MaritalStatusPipe } from './marital-status.pipe';
 import { CpfPipe } from './cpf.pipe';
 
-
-
 @NgModule({
-  declarations: [
+  declarations: [	
     MaritalStatusPipe,
-    CpfPipe
-  ],
+    CpfPipe,
+    
+   ],
   imports: [
     CommonModule
   ],
   exports: [
     MaritalStatusPipe,
-    CpfPipe
+    CpfPipe,
+    
   ]
 })
 export class PipesModule { }
