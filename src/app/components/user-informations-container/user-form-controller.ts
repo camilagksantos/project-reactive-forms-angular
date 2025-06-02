@@ -61,10 +61,7 @@ export class UserFormController {
                 typeDescription: [phone.typeDescription],
                 number: [phone.phoneNumber, phoneValidators]
             }));
-            console.log('phoneList checando', phone);
         });
-
-        console.log('form phoneList', this.phoneList);
     }
     
     fulfillAddressList(addressList: AddressList) {
